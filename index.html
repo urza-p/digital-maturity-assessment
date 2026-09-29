@@ -492,62 +492,62 @@
               ],
             },
             {
-              text: "What proportion of regular guest interactions are completed online without the help of hotel staff?",
+              text: "What proportion of regular guest interactions like bookings, check-in, service requests etc. are completed online without the help of hotel staff?",
               answers: [
                 {
                   value: 1,
                   label:
-                    "Less than 20%: almost all routine interactions require direct staff assistance.",
+                    "Less than 20%: Almost all routine interactions require direct staff assistance.",
                 },
                 {
                   value: 2,
                   label:
-                    "20–39%: a limited number of interactions can be completed digitally.",
+                    "20–39%: A limited number of interactions can be completed digitally.",
                 },
                 {
                   value: 3,
                   label:
-                    "40–59%: about half of routine guest interactions can be completed digitally.",
+                    "40–59%: About half of routine guest interactions can be completed digitally.",
                 },
                 {
                   value: 4,
                   label:
-                    "60–79%: most routine guest interactions can be completed digitally without staff assistance.",
+                    "60–79%: Most routine guest interactions can be completed digitally without staff assistance.",
                 },
                 {
                   value: 5,
                   label:
-                    "80% or more: nearly all routine guest interactions can be completed digitally without staff assistance.",
+                    "80% or more: Nearly all routine guest interactions can be completed digitally without staff assistance.",
                 },
               ],
             },
             {
-              text: "What degree of self-service features are available on the hotel's mobile app or website?",
+              text: "How do guests finish the checkout process and check or adjust their final bill?",
               answers: [
                 {
                   value: 1,
                   label:
-                    "No Self-Service: the hotel’s website or app provides information only; guests cannot complete routine service tasks themselves.",
+                    "Fully Staff-Assisted: Guests must visit or contact the front desk to review their final bill, make any adjustments, complete payment, and check out.",
                 },
                 {
                   value: 2,
                   label:
-                    "Limited Self-Service: guests can complete one basic task digitally, such as making a reservation or submitting a service request.",
+                    "Basic Digital Support: Guests can view or receive their final bill digitally, but payment, bill adjustments, or checkout still normally require front-desk assistance.",
                 },
                 {
                   value: 3,
                   label:
-                    "Moderate Self-Service: guests can complete several routine tasks digitally, such as booking, check-in, or submitting service requests, but some common tasks still require staff assistance.",
+                    "Partial Self-Service: Guests can review their bill and complete some checkout steps digitally, but routine bill adjustments or other checkout steps may still require staff assistance.",
                 },
                 {
                   value: 4,
                   label:
-                    "Extensive Self-Service: guests can complete most stay-related tasks digitally, including booking, check-in, room or service requests, and digital room access.",
+                    "Digital Checkout: Guests can review their bill, make payment, and complete checkout digitally without routine staff assistance, but bill adjustments or exceptions may still require staff.",
                 },
                 {
                   value: 5,
                   label:
-                    "End-to-End Self-Service: guests can complete nearly the entire stay journey digitally, including booking, check-in, room access, service requests, checkout, and billing-related tasks without routine staff assistance.",
+                    "Fully Digital Checkout and Billing: Guests can review charges, request or make supported bill adjustments, complete payment, receive their final receipt, and finish checkout digitally, with staff needed only for unusual exceptions or disputes.",
                 },
               ],
             },
@@ -813,32 +813,32 @@
               ],
             },
             {
-              text: "How is hotel staffing planned using demand estimates produced by AI?",
+              text: "What duties can an AI guest-service tool perform when a guest contacts the hotel via a digital channel?",
               answers: [
                 {
                   value: 1,
                   label:
-                    "No AI Use: staffing decisions are made manually without AI-generated demand estimates.",
+                    "No AI Guest Service: The hotel does not use an AI guest-service tool when guests contact the hotel through digital channels.",
                 },
                 {
                   value: 2,
                   label:
-                    "Limited AI Use: AI-generated demand estimates are available, but staffing decisions are generally made without routinely using them.",
+                    "Basic Information: The AI tool can answer common guest questions, such as check-in times, hotel amenities, policies, or directions, but cannot complete service requests.",
                 },
                 {
                   value: 3,
                   label:
-                    "AI-Supported Planning: managers regularly review AI-generated demand estimates when creating staffing schedules but make the final staffing decisions manually.",
+                    "Guest-Service Assistance: The AI tool can answer questions and handle basic guest requests, such as requesting towels, housekeeping, or other routine services, but staff are needed for more complex requests.",
                 },
                 {
                   value: 4,
                   label:
-                    "Integrated AI Planning: AI-generated demand estimates are routinely incorporated into staffing recommendations or schedules, which managers review and adjust when necessary.",
+                    "Automated Guest Service: The AI tool can complete several guest-service tasks, such as answering questions, creating service requests, checking request status, or making routine changes, while transferring exceptions to staff.",
                 },
                 {
                   value: 5,
                   label:
-                    "Optimized AI Staffing: AI-generated demand estimates continuously support staffing plans, recommendations are adjusted as demand changes, and the hotel measures actual staffing results against the forecasts to improve future planning.",
+                    "Connected and Personalized Guest Service: The AI tool can use guest and reservation information to provide personalized responses, complete multiple connected service tasks, update relevant hotel systems, and transfer unusual or complex situations to staff when needed.",
                 },
               ],
             },
@@ -976,7 +976,7 @@
           meaning:
             "The hotel has strong guest tools, connected data, automated operations, AI use, and trained staff. The next frontier is not adoption, but making AI work better.",
           action:
-            "Strategic priority: Pilot AI demand forecasting and review its accuracy every month.",
+            "Strategic priority: Use AI forecasting at more hotels and check the results each month to see if the predictions are accurate and helpful.",
         },
         mixed: {
           name: "Mixed Pattern · No Clear Profile",
@@ -1051,6 +1051,7 @@
         const lowIndexes = scores
           .map((s, i) => (Math.abs(s - lows) < 1e-9 ? i : -1))
           .filter((i) => i >= 0);
+        const allTied = scores.every((s) => Math.abs(s - scores[0]) < 1e-9);
         const sorted = scores
           .map((s, i) => ({ s, i }))
           .sort((a, b) => a.s - b.s || a.i - b.i);
@@ -1059,7 +1060,6 @@
           .map((s, i) => ({ s, i }))
           .filter((x) => x.s <= cutoff + 1e-9)
           .map((x) => x.i);
-        const allTied = scores.every((s) => Math.abs(s - scores[0]) < 1e-9);
         document.getElementById("scoreList").innerHTML = scores
           .map(
             (s, i) =>
