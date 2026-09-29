@@ -1059,10 +1059,11 @@
           .map((s, i) => ({ s, i }))
           .filter((x) => x.s <= cutoff + 1e-9)
           .map((x) => x.i);
+        const allTied = scores.every((s) => Math.abs(s - scores[0]) < 1e-9);
         document.getElementById("scoreList").innerHTML = scores
           .map(
             (s, i) =>
-              `<div class="score-row"><span>${assessmentData[i].name}${twoLowest.includes(i) ? '<span class="low-tag">Among two lowest</span>' : ""}</span><span class="score-val">${s.toFixed(2)} / 5</span></div>`,
+              `<div class="score-row"><span>${assessmentData[i].name}${!allTied && twoLowest.includes(i) ? '<span class="low-tag">Among two lowest</span>' : ""}</span><span class="score-val">${s.toFixed(2)} / 5</span></div>`,
           )
           .join("");
         const profile = getProfile(scores);
@@ -1070,8 +1071,9 @@
         document.getElementById("profileMeaning").textContent = profile.meaning;
         document.getElementById("profileAction").textContent = profile.action;
         const lowNames = twoLowest.map((i) => assessmentData[i].name);
-        document.getElementById("lowestScores").textContent =
-          `Two lowest dimensions: ${lowNames.join(" and ")}${twoLowest.length > 2 ? " (tie at the cutoff; all tied dimensions are shown)" : ""}.`;
+        document.getElementById("lowestScores").textContent = allTied
+          ? "All dimensions tied."
+          : `Two lowest dimensions: ${lowNames.join(" and ")}${twoLowest.length > 2 ? " (tie at the cutoff; all tied dimensions are shown)" : ""}.`;
         const ctx = document.getElementById("radar");
         if (radarChart) radarChart.destroy();
         radarChart = new Chart(ctx, {
