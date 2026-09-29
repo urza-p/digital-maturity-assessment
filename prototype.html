@@ -244,7 +244,7 @@
       }
       .result-grid {
         display: grid;
-        grid-template-columns: 1.05fr 1fr;
+        grid-template-columns: 1fr;
         gap: 18px;
       }
       .panel {
@@ -351,9 +351,6 @@
         }
         .dimension {
           padding: 19px 17px;
-        }
-        .result-grid {
-          grid-template-columns: 1fr;
         }
         .chart-wrap {
           height: 310px;
@@ -467,31 +464,91 @@
             {
               text: "How do most of the guests complete the check in process?",
               answers: [
-                "Guests check in at the front desk and complete registration with staff assistance.",
-                "Guests may submit some information online before arrival, but must complete check-in at the front desk.",
-                "Guests can complete digital check-in before arrival or use a kiosk, but still need staff for some steps, such as receiving a physical key.",
-                "Guests can complete check-in digitally, select their room when available, and access the room using a mobile or digital key with minimal staff assistance.",
-                "The complete process, from identity/registration through room assignment and digital-key access, can be completed digitally without routine staff assistance.",
+                {
+                  value: 1,
+                  label:
+                    "Guests check in at the front desk and complete registration with staff assistance.",
+                },
+                {
+                  value: 2,
+                  label:
+                    "Guests may submit some information online before arrival, but must complete check-in at the front desk.",
+                },
+                {
+                  value: 3,
+                  label:
+                    "Guests can complete digital check-in before arrival or use a kiosk, but still need staff for some steps, such as receiving a physical key.",
+                },
+                {
+                  value: 4,
+                  label:
+                    "Guests can complete check-in digitally, select their room when available, and access the room using a mobile or digital key with minimal staff assistance.",
+                },
+                {
+                  value: 5,
+                  label:
+                    "The complete process, from identity/registration through room assignment and digital-key access, can be completed digitally without routine staff assistance.",
+                },
               ],
             },
             {
               text: "What proportion of regular guest interactions are completed online without the help of hotel staff?",
               answers: [
-                "Less than 20%: almost all routine interactions require direct staff assistance.",
-                "20–39%: a limited number of interactions can be completed digitally.",
-                "40–59%: about half of routine guest interactions can be completed digitally.",
-                "60–79%: most routine guest interactions can be completed digitally without staff assistance.",
-                "80% or more: nearly all routine guest interactions can be completed digitally without staff assistance.",
+                {
+                  value: 1,
+                  label:
+                    "Less than 20%: almost all routine interactions require direct staff assistance.",
+                },
+                {
+                  value: 2,
+                  label:
+                    "20–39%: a limited number of interactions can be completed digitally.",
+                },
+                {
+                  value: 3,
+                  label:
+                    "40–59%: about half of routine guest interactions can be completed digitally.",
+                },
+                {
+                  value: 4,
+                  label:
+                    "60–79%: most routine guest interactions can be completed digitally without staff assistance.",
+                },
+                {
+                  value: 5,
+                  label:
+                    "80% or more: nearly all routine guest interactions can be completed digitally without staff assistance.",
+                },
               ],
             },
             {
               text: "What degree of self-service features are available on the hotel's mobile app or website?",
               answers: [
-                "No Self-Service: the hotel’s website or app provides information only; guests cannot complete routine service tasks themselves.",
-                "Limited Self-Service: guests can complete one basic task digitally, such as making a reservation or submitting a service request.",
-                "Moderate Self-Service: guests can complete several routine tasks digitally, such as booking, check-in, or submitting service requests, but some common tasks still require staff assistance.",
-                "Extensive Self-Service: guests can complete most stay-related tasks digitally, including booking, check-in, room or service requests, and digital room access.",
-                "End-to-End Self-Service: guests can complete nearly the entire stay journey digitally, including booking, check-in, room access, service requests, checkout, and billing-related tasks without routine staff assistance.",
+                {
+                  value: 1,
+                  label:
+                    "No Self-Service: the hotel’s website or app provides information only; guests cannot complete routine service tasks themselves.",
+                },
+                {
+                  value: 2,
+                  label:
+                    "Limited Self-Service: guests can complete one basic task digitally, such as making a reservation or submitting a service request.",
+                },
+                {
+                  value: 3,
+                  label:
+                    "Moderate Self-Service: guests can complete several routine tasks digitally, such as booking, check-in, or submitting service requests, but some common tasks still require staff assistance.",
+                },
+                {
+                  value: 4,
+                  label:
+                    "Extensive Self-Service: guests can complete most stay-related tasks digitally, including booking, check-in, room or service requests, and digital room access.",
+                },
+                {
+                  value: 5,
+                  label:
+                    "End-to-End Self-Service: guests can complete nearly the entire stay journey digitally, including booking, check-in, room access, service requests, checkout, and billing-related tasks without routine staff assistance.",
+                },
               ],
             },
           ],
@@ -504,31 +561,91 @@
             {
               text: "How is room availability updated on both the hotel's direct booking system and online travel agencies like Booking.com and Expedia?",
               answers: [
-                "Manual: staff manually update room availability separately on the hotel's system and each online travel agency.",
-                "Partially Digital: availability is managed digitally, but staff still manually update or reconcile multiple booking channels.",
-                "Connected: a channel-management system automatically synchronizes availability between the hotel's property management system and major booking channels.",
-                "Fully Integrated: availability, reservations, cancellations, and room inventory synchronize automatically in real time across the PMS, direct booking system, and major online travel agencies.",
-                "Integrated & Optimized: real-time synchronized availability is combined with occupancy and demand data to automatically support inventory and distribution decisions across channels.",
+                {
+                  value: 1,
+                  label:
+                    "Manual: staff manually update room availability separately on the hotel's system and each online travel agency.",
+                },
+                {
+                  value: 2,
+                  label:
+                    "Partially Digital: availability is managed digitally, but staff still manually update or reconcile multiple booking channels.",
+                },
+                {
+                  value: 3,
+                  label:
+                    "Connected: a channel-management system automatically synchronizes availability between the hotel's property management system and major booking channels.",
+                },
+                {
+                  value: 4,
+                  label:
+                    "Fully Integrated: availability, reservations, cancellations, and room inventory synchronize automatically in real time across the PMS, direct booking system, and major online travel agencies.",
+                },
+                {
+                  value: 5,
+                  label:
+                    "Integrated & Optimized: real-time synchronized availability is combined with occupancy and demand data to automatically support inventory and distribution decisions across channels.",
+                },
               ],
             },
             {
               text: "How are your primary performance metrics-occupancy, average daily rate, revenue per available room, and labor cost-reported?",
               answers: [
-                "Manual/Separate: metrics are maintained separately in paper records or spreadsheets and calculated manually.",
-                "Department-Level: some metrics are available digitally, but information comes from separate departmental systems or reports.",
-                "Connected Reporting: major metrics are brought together into recurring digital reports, though some manual preparation or reconciliation is still required.",
-                "Integrated Dashboard: occupancy, ADR, RevPAR, and labor information are automatically combined into a centralized dashboard or scheduled report.",
-                "Unified Real-Time Analytics: all major performance metrics use connected data sources and are available through a consistent, up-to-date management dashboard without manual reconciliation.",
+                {
+                  value: 1,
+                  label:
+                    "Manual/Separate: metrics are maintained separately in paper records or spreadsheets and calculated manually.",
+                },
+                {
+                  value: 2,
+                  label:
+                    "Department-Level: some metrics are available digitally, but information comes from separate departmental systems or reports.",
+                },
+                {
+                  value: 3,
+                  label:
+                    "Connected Reporting: major metrics are brought together into recurring digital reports, though some manual preparation or reconciliation is still required.",
+                },
+                {
+                  value: 4,
+                  label:
+                    "Integrated Dashboard: occupancy, ADR, RevPAR, and labor information are automatically combined into a centralized dashboard or scheduled report.",
+                },
+                {
+                  value: 5,
+                  label:
+                    "Unified Real-Time Analytics: all major performance metrics use connected data sources and are available through a consistent, up-to-date management dashboard without manual reconciliation.",
+                },
               ],
             },
             {
               text: "What percentage of guest and reservation data is automatically moved between the PMS and other hotel systems without the need for human re-entry?",
               answers: [
-                "Less than 20%: almost all information must be manually re-entered between systems.",
-                "20–39%: a small portion transfers automatically, but substantial manual re-entry remains.",
-                "40–59%: around half of the information transfers automatically between systems.",
-                "60–79%: most information transfers automatically with limited manual re-entry.",
-                "80% or more: nearly all routine guest and reservation information transfers automatically between integrated systems.",
+                {
+                  value: 1,
+                  label:
+                    "Less than 20%: almost all information must be manually re-entered between systems.",
+                },
+                {
+                  value: 2,
+                  label:
+                    "20–39%: a small portion transfers automatically, but substantial manual re-entry remains.",
+                },
+                {
+                  value: 3,
+                  label:
+                    "40–59%: around half of the information transfers automatically between systems.",
+                },
+                {
+                  value: 4,
+                  label:
+                    "60–79%: most information transfers automatically with limited manual re-entry.",
+                },
+                {
+                  value: 5,
+                  label:
+                    "80% or more: nearly all routine guest and reservation information transfers automatically between integrated systems.",
+                },
               ],
             },
           ],
@@ -541,31 +658,91 @@
             {
               text: "Which maintenance tasks are carried out automatically by the hotel's work-order system?",
               answers: [
-                "No Automation: the hotel does not use an automated work-order system; maintenance issues are reported, assigned, and tracked manually.",
-                "Digital Tracking: maintenance requests are recorded in a digital system, but staff manually assign, prioritize, and follow up on work orders.",
-                "Basic Workflow Automation: the system automatically assigns or routes some maintenance work orders, while prioritization and follow-up still require staff action.",
-                "Advanced Workflow Automation: the system automatically routes, prioritizes, sends status notifications, and escalates overdue maintenance work orders based on predefined rules.",
-                "Intelligent/Proactive Automation: the system automatically creates, prioritizes, routes, tracks, and escalates work orders and can initiate preventive maintenance based on equipment or operational data.",
+                {
+                  value: 1,
+                  label:
+                    "No Automation: the hotel does not use an automated work-order system; maintenance issues are reported, assigned, and tracked manually.",
+                },
+                {
+                  value: 2,
+                  label:
+                    "Digital Tracking: maintenance requests are recorded in a digital system, but staff manually assign, prioritize, and follow up on work orders.",
+                },
+                {
+                  value: 3,
+                  label:
+                    "Basic Workflow Automation: the system automatically assigns or routes some maintenance work orders, while prioritization and follow-up still require staff action.",
+                },
+                {
+                  value: 4,
+                  label:
+                    "Advanced Workflow Automation: the system automatically routes, prioritizes, sends status notifications, and escalates overdue maintenance work orders based on predefined rules.",
+                },
+                {
+                  value: 5,
+                  label:
+                    "Intelligent/Proactive Automation: the system automatically creates, prioritizes, routes, tracks, and escalates work orders and can initiate preventive maintenance based on equipment or operational data.",
+                },
               ],
             },
             {
               text: 'How is a room’s status updated in order to change a room from "guest checked out" to "ready for the next guest,"?',
               answers: [
-                "Fully Manual: front desk and housekeeping communicate through phone, radio, paper, or verbal updates, and room status is manually changed.",
-                "Basic Digital Tracking: housekeeping records room status digitally, but staff still need calls, messages, or separate manual updates between departments.",
-                "Connected Workflow: housekeeping updates room status in a system connected to the PMS, making the updated status automatically visible to the front desk.",
-                "Automated Workflow: guest checkout automatically triggers a housekeeping task, and completion by housekeeping automatically updates the room status in the PMS.",
-                "Fully Automated Coordination: checkout automatically triggers cleaning assignment and prioritization; completion updates room readiness across connected systems and can automatically trigger actions such as guest notifications or room assignment.",
+                {
+                  value: 1,
+                  label:
+                    "Fully Manual: front desk and housekeeping communicate through phone, radio, paper, or verbal updates, and room status is manually changed.",
+                },
+                {
+                  value: 2,
+                  label:
+                    "Basic Digital Tracking: housekeeping records room status digitally, but staff still need calls, messages, or separate manual updates between departments.",
+                },
+                {
+                  value: 3,
+                  label:
+                    "Connected Workflow: housekeeping updates room status in a system connected to the PMS, making the updated status automatically visible to the front desk.",
+                },
+                {
+                  value: 4,
+                  label:
+                    "Automated Workflow: guest checkout automatically triggers a housekeeping task, and completion by housekeeping automatically updates the room status in the PMS.",
+                },
+                {
+                  value: 5,
+                  label:
+                    "Fully Automated Coordination: checkout automatically triggers cleaning assignment and prioritization; completion updates room readiness across connected systems and can automatically trigger actions such as guest notifications or room assignment.",
+                },
               ],
             },
             {
               text: "To what extent is the hotel's end-of-day financial reconciliation procedure automated?",
               answers: [
-                "Fully Manual: staff manually compare financial records from different sources, such as receipts, transaction records, and spreadsheets, at the end of the day.",
-                "Basic Digital Records: financial records are stored digitally, but staff must manually compare information from separate systems or reports.",
-                "System-Based Reconciliation: a central hotel system combines most daily financial records, but staff still perform some manual checks or corrections.",
-                "Automated Reconciliation: connected systems automatically compare most daily financial records and flag discrepancies for staff to review.",
-                "Fully Automated Reconciliation: integrated systems automatically reconcile daily financial records, identify exceptions, and generate a completed report, with staff reviewing only flagged issues.",
+                {
+                  value: 1,
+                  label:
+                    "Fully Manual: staff manually compare financial records from different sources, such as receipts, transaction records, and spreadsheets, at the end of the day.",
+                },
+                {
+                  value: 2,
+                  label:
+                    "Basic Digital Records: financial records are stored digitally, but staff must manually compare information from separate systems or reports.",
+                },
+                {
+                  value: 3,
+                  label:
+                    "System-Based Reconciliation: a central hotel system combines most daily financial records, but staff still perform some manual checks or corrections.",
+                },
+                {
+                  value: 4,
+                  label:
+                    "Automated Reconciliation: connected systems automatically compare most daily financial records and flag discrepancies for staff to review.",
+                },
+                {
+                  value: 5,
+                  label:
+                    "Fully Automated Reconciliation: integrated systems automatically reconcile daily financial records, identify exceptions, and generate a completed report, with staff reviewing only flagged issues.",
+                },
               ],
             },
           ],
@@ -578,31 +755,91 @@
             {
               text: "How does the hotel assess the accuracy and use of the results generated by its AI tools?",
               answers: [
-                "No AI Assessment: the hotel does not use AI tools in its operations.",
-                "Informal Review: the hotel uses at least one AI tool, but its results are reviewed informally with no defined accuracy measure.",
-                "Basic Performance Review: staff periodically compare AI recommendations or predictions with actual outcomes, but the review process is not consistently documented.",
-                "Managed AI Performance: the hotel regularly measures and records the accuracy or effectiveness of AI results using defined performance measures.",
-                "Continuous AI Monitoring: the hotel systematically monitors AI performance across multiple operational areas, reports results, and uses those findings to adjust or improve how AI tools are used.",
+                {
+                  value: 1,
+                  label:
+                    "No AI Assessment: the hotel does not use AI tools in its operations.",
+                },
+                {
+                  value: 2,
+                  label:
+                    "Informal Review: the hotel uses at least one AI tool, but its results are reviewed informally with no defined accuracy measure.",
+                },
+                {
+                  value: 3,
+                  label:
+                    "Basic Performance Review: staff periodically compare AI recommendations or predictions with actual outcomes, but the review process is not consistently documented.",
+                },
+                {
+                  value: 4,
+                  label:
+                    "Managed AI Performance: the hotel regularly measures and records the accuracy or effectiveness of AI results using defined performance measures.",
+                },
+                {
+                  value: 5,
+                  label:
+                    "Continuous AI Monitoring: the hotel systematically monitors AI performance across multiple operational areas, reports results, and uses those findings to adjust or improve how AI tools are used.",
+                },
               ],
             },
             {
               text: "Which of the following best sums up how the hotel now uses AI in its operations?",
               answers: [
-                "No Operational AI: the hotel does not currently use AI for operational tasks or decision-making.",
-                "Limited AI Use: the hotel uses AI for one specific task, such as answering guest questions, but most operational decisions are still made without AI.",
-                "AI-Supported Decisions: the hotel uses AI-generated predictions or recommendations in at least one operational area, such as room pricing, and managers regularly consider these recommendations when making decisions.",
-                "Managed AI Operations: the hotel uses AI in at least two operational areas, such as pricing and staffing forecasts, and regularly measures how accurately or effectively the AI performs.",
-                "Scaled AI Operations: the hotel uses AI across three or more operational areas, regularly monitors and reports its performance, and uses the results to improve operational decisions.",
+                {
+                  value: 1,
+                  label:
+                    "No Operational AI: the hotel does not currently use AI for operational tasks or decision-making.",
+                },
+                {
+                  value: 2,
+                  label:
+                    "Limited AI Use: the hotel uses AI for one specific task, such as answering guest questions, but most operational decisions are still made without AI.",
+                },
+                {
+                  value: 3,
+                  label:
+                    "AI-Supported Decisions: the hotel uses AI-generated predictions or recommendations in at least one operational area, such as room pricing, and managers regularly consider these recommendations when making decisions.",
+                },
+                {
+                  value: 4,
+                  label:
+                    "Managed AI Operations: the hotel uses AI in at least two operational areas, such as pricing and staffing forecasts, and regularly measures how accurately or effectively the AI performs.",
+                },
+                {
+                  value: 5,
+                  label:
+                    "Scaled AI Operations: the hotel uses AI across three or more operational areas, regularly monitors and reports its performance, and uses the results to improve operational decisions.",
+                },
               ],
             },
             {
               text: "How is hotel staffing planned using demand estimates produced by AI?",
               answers: [
-                "No AI Use: staffing decisions are made manually without AI-generated demand estimates.",
-                "Limited AI Use: AI-generated demand estimates are available, but staffing decisions are generally made without routinely using them.",
-                "AI-Supported Planning: managers regularly review AI-generated demand estimates when creating staffing schedules but make the final staffing decisions manually.",
-                "Integrated AI Planning: AI-generated demand estimates are routinely incorporated into staffing recommendations or schedules, which managers review and adjust when necessary.",
-                "Optimized AI Staffing: AI-generated demand estimates continuously support staffing plans, recommendations are adjusted as demand changes, and the hotel measures actual staffing results against the forecasts to improve future planning.",
+                {
+                  value: 1,
+                  label:
+                    "No AI Use: staffing decisions are made manually without AI-generated demand estimates.",
+                },
+                {
+                  value: 2,
+                  label:
+                    "Limited AI Use: AI-generated demand estimates are available, but staffing decisions are generally made without routinely using them.",
+                },
+                {
+                  value: 3,
+                  label:
+                    "AI-Supported Planning: managers regularly review AI-generated demand estimates when creating staffing schedules but make the final staffing decisions manually.",
+                },
+                {
+                  value: 4,
+                  label:
+                    "Integrated AI Planning: AI-generated demand estimates are routinely incorporated into staffing recommendations or schedules, which managers review and adjust when necessary.",
+                },
+                {
+                  value: 5,
+                  label:
+                    "Optimized AI Staffing: AI-generated demand estimates continuously support staffing plans, recommendations are adjusted as demand changes, and the hotel measures actual staffing results against the forecasts to improve future planning.",
+                },
               ],
             },
           ],
@@ -615,31 +852,91 @@
             {
               text: "How does the hotel provide and track formal training for front desk and housekeeping staff on the digital systems required for their jobs?",
               answers: [
-                "No Formal Training: staff receive no formal training on required digital systems and mainly learn through coworkers, trial and error, or informal instructions.",
-                "Basic Training: staff receive a one-time training session when a digital system is introduced, but completion is not consistently tracked and refresher training is rarely provided.",
-                "Structured Training: staff receive required training on the digital systems used in their roles, and the hotel keeps records of training completion for each employee.",
-                "Managed Training: the hotel tracks training completion, provides refresher or updated training when systems change, and managers monitor whether employees are using the systems correctly.",
-                "Continuous Training and Improvement: the hotel follows a recurring training process, tracks completion and system use, collects employee feedback, assigns responsibility for follow-up, and provides additional training when gaps are identified.",
+                {
+                  value: 1,
+                  label:
+                    "No Formal Training: staff receive no formal training on required digital systems and mainly learn through coworkers, trial and error, or informal instructions.",
+                },
+                {
+                  value: 2,
+                  label:
+                    "Basic Training: staff receive a one-time training session when a digital system is introduced, but completion is not consistently tracked and refresher training is rarely provided.",
+                },
+                {
+                  value: 3,
+                  label:
+                    "Structured Training: staff receive required training on the digital systems used in their roles, and the hotel keeps records of training completion for each employee.",
+                },
+                {
+                  value: 4,
+                  label:
+                    "Managed Training: the hotel tracks training completion, provides refresher or updated training when systems change, and managers monitor whether employees are using the systems correctly.",
+                },
+                {
+                  value: 5,
+                  label:
+                    "Continuous Training and Improvement: the hotel follows a recurring training process, tracks completion and system use, collects employee feedback, assigns responsibility for follow-up, and provides additional training when gaps are identified.",
+                },
               ],
             },
             {
               text: "When the hotel introduces a new digital technology, what change-management procedures does it follow?",
               answers: [
-                "No Formal Change Process: new technology is introduced with little or no formal training, communication, or employee support.",
-                "Basic Introduction: staff receive a one-time training session or basic instructions when the new technology is introduced, with little structured follow-up.",
-                "Structured Adoption: staff receive formal training before using the technology, and managers monitor whether employees are using it correctly after implementation.",
-                "Supported Change Management: the hotel provides training before implementation, collects employee feedback, monitors adoption, and makes adjustments when problems are identified.",
-                "Continuous Improvement Process: the hotel follows a repeatable change process that includes training, adoption measurement, employee feedback, assigned ownership, corrective actions, and follow-up checks after implementation.",
+                {
+                  value: 1,
+                  label:
+                    "No Formal Change Process: new technology is introduced with little or no formal training, communication, or employee support.",
+                },
+                {
+                  value: 2,
+                  label:
+                    "Basic Introduction: staff receive a one-time training session or basic instructions when the new technology is introduced, with little structured follow-up.",
+                },
+                {
+                  value: 3,
+                  label:
+                    "Structured Adoption: staff receive formal training before using the technology, and managers monitor whether employees are using it correctly after implementation.",
+                },
+                {
+                  value: 4,
+                  label:
+                    "Supported Change Management: the hotel provides training before implementation, collects employee feedback, monitors adoption, and makes adjustments when problems are identified.",
+                },
+                {
+                  value: 5,
+                  label:
+                    "Continuous Improvement Process: the hotel follows a repeatable change process that includes training, adoption measurement, employee feedback, assigned ownership, corrective actions, and follow-up checks after implementation.",
+                },
               ],
             },
             {
               text: "What support is available when an employee has difficulty using a digital system while working?",
               answers: [
-                "Informal Help Only: employees mainly rely on coworkers or try to solve problems themselves, with no defined support process.",
-                "Manager Assistance: employees can ask a supervisor or designated coworker for help, but support is informal and may not be consistently available.",
-                "Defined Support Process: employees have a documented way to request assistance, such as a help desk, support contact, or internal ticketing process.",
-                "Structured and Tracked Support: employees can access dedicated support and training resources, and recurring problems are tracked so managers can address common issues.",
-                "Continuous Support and Improvement: employees have readily available support, recurring issues are analyzed, and the hotel uses support data to update training, systems, or work processes to prevent future problems.",
+                {
+                  value: 1,
+                  label:
+                    "Informal Help Only: employees mainly rely on coworkers or try to solve problems themselves, with no defined support process.",
+                },
+                {
+                  value: 2,
+                  label:
+                    "Manager Assistance: employees can ask a supervisor or designated coworker for help, but support is informal and may not be consistently available.",
+                },
+                {
+                  value: 3,
+                  label:
+                    "Defined Support Process: employees have a documented way to request assistance, such as a help desk, support contact, or internal ticketing process.",
+                },
+                {
+                  value: 4,
+                  label:
+                    "Structured and Tracked Support: employees can access dedicated support and training resources, and recurring problems are tracked so managers can address common issues.",
+                },
+                {
+                  value: 5,
+                  label:
+                    "Continuous Support and Improvement: employees have readily available support, recurring issues are analyzed, and the hotel uses support data to update training, systems, or work processes to prevent future problems.",
+                },
               ],
             },
           ],
@@ -709,8 +1006,8 @@
           q.answers.forEach((answer, ai) => {
             const label = document.createElement("label");
             label.className = "option";
-            label.innerHTML = `<input type="radio" name="q-${di}-${qi}" value="${ai + 1}" required><span class="level">${ai + 1}</span><span class="opt-copy"></span>`;
-            label.querySelector(".opt-copy").textContent = answer;
+            label.innerHTML = `<input type="radio" name="q-${di}-${qi}" value="${answer.value}" required><span class="level">${answer.value}</span><span class="opt-copy"></span>`;
+            label.querySelector(".opt-copy").textContent = answer.label;
             options.appendChild(label);
           });
           block.appendChild(options);
